@@ -1,23 +1,9 @@
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:8.1.1'
-    }
+plugins {
+    id 'com.android.application' version '8.1.1'
 }
-
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-
-apply plugin: 'com.android.application'
 
 android {
+    namespace 'com.meuapp.localizador'
     compileSdk 33
 
     defaultConfig {
@@ -39,4 +25,3 @@ android {
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
 }
-
