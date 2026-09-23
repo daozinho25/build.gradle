@@ -1,0 +1,29 @@
+name: Compilar APK Android
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Baixar codigo
+      uses: actions/checkout@v4
+
+    - name: Configurar Java JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Compilar APK
+      run: gradle assembleDebug --stacktrace
+
+    - name: Salvar APK Gerado
+      uses: actions/upload-artifact@v4
+      with:
+        name: app-localizador-apk
+        path: '**/build/outputs/apk/debug/*.apk'
