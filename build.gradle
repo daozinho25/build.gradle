@@ -25,3 +25,30 @@ android {
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
 }
+                         plugins {
+    id 'com.android.application' version '8.1.1'
+}
+
+android {
+    namespace 'com.meuapp.localizador'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.meuapp.localizador"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['.']
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+}
